@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Permissions that will be needed later -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
+
+    <application
+        android:name=".FloatingPetApplication"
+        android:allowBackup="true"
+        android:label="Floating Pet"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Material3.Dynamic">
+        <!-- Onboarding is the launcher activity -->
+        <activity
+            android:name=".OnboardingActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Material3.Dynamic">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Material3.Dynamic" />
+
+<property
+    android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+    android:value="floating_pet_overlay" />
+
+<service
+    android:name="com.floatingpet.feature.floating.FloatingWindowService"
+    android:foregroundServiceType="specialUse"
+    android:exported="false" />
+
+<service
+    android:name="com.floatingpet.feature.notifications.PetNotificationListenerService"
+    android:exported="true"
+    android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
+    <intent-filter>
+        <action android:name="android.service.notification.NotificationListenerService" />
+    </intent-filter>
+</service>
+
+    </application>
+</manifest>
