@@ -70,7 +70,7 @@ implementation("androidx.media3:media3-ui:1.2.1")
 implementation("com.github.yalantis:ucrop:2.2.8")
 
 // FFmpegKit (video editing) – APK size will increase significantly
-implementation("com.arthenica:ffmpeg-kit-full:4.5.1")
+implementation("com.arthenica:ffmpeg-kit-full:6.0-2")
     // Compose + Material 3
     val composeBom = platform("androidx.compose:compose-bom:2024.02.00")
     implementation(composeBom)
