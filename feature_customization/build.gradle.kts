@@ -38,7 +38,7 @@ dependencies {
     implementation("com.github.yalantis:ucrop:2.2.8")
 
     // FFmpegKit
-    implementation("com.arthenica:ffmpeg-kit-full:6.0-2")
+    implementation("com.arthenica:ffmpeg-kit-full:4.5.1")
 
     // Glide
     implementation("com.github.bumptech.glide:glide:4.16.0")

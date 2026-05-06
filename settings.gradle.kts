@@ -10,7 +10,7 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
         maven { url = uri("https://jitpack.io") }
-        maven { url = uri("https://github.com/nickg/ffmpeg-kit/raw/main/prebuilt/bundle-android-aar/ffmpeg-kit-full") }
+        maven { url = uri("https://github.com/arthenica/ffmpeg-kit/releases/download/v6.0/") }
     }
 }
 
